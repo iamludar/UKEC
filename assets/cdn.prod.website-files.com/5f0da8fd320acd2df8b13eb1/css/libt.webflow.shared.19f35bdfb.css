@@ -995,6 +995,11 @@ textarea.w-input, textarea.w-select {
   }
 }
 
+.uui-navbar01_link.w--current, .lnd_nav_link.w--current {
+  color: var(--white-3) !important;
+  font-weight: 700 !important;
+}
+
 .w-widget {
   position: relative;
 }
@@ -1838,6 +1843,11 @@ textarea.w-input, textarea.w-select {
 
 .w-nav-link.w--current {
   color: #0082f3;
+}
+
+.uui-navbar01_link.w--current, .lnd_nav_link.w--current {
+  color: inherit;
+  font-weight: 700;
 }
 
 .w-nav-menu {
@@ -51939,4 +51949,9 @@ blockquote {
   #w-node-_4c52d130-4872-6a4b-0942-098017625027-46122f0a {
     order: -9999;
   }
+}
+
+.uui-navbar01_link.w--current, .lnd_nav_link.w--current {
+  color: var(--white-3) !important;
+  font-weight: 700 !important;
 }
