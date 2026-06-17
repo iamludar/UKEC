@@ -1000,6 +1000,29 @@ textarea.w-input, textarea.w-select {
   font-weight: 700 !important;
 }
 
+.megamnenu,
+.header-nav,
+.navbar-no-shadow,
+.lnd_footer.nohover {
+  display: none !important;
+}
+
+html:not(.ukec-layout-ready) body > .megamnenu,
+html:not(.ukec-layout-ready) body > .header-nav,
+html:not(.ukec-layout-ready) body > .lnd_footer.nohover {
+  visibility: hidden;
+}
+
+html[data-wf-page="5f129de6fc9952eda1b69ca3"]:not(.ukec-layout-ready) body,
+html[data-wf-page="661f8b96f6b4a6ab35e09968"]:not(.ukec-layout-ready) body {
+  background: #f7f8fb;
+}
+
+html[data-wf-page="5f129de6fc9952eda1b69ca3"]:not(.ukec-layout-ready) body > *,
+html[data-wf-page="661f8b96f6b4a6ab35e09968"]:not(.ukec-layout-ready) body > * {
+  visibility: hidden;
+}
+
 .w-widget {
   position: relative;
 }

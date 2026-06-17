@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project List | UKEC</title>
+  <meta name="description" content="Browse UKEC programme brochures and partner university project information for Asia-Pacific learners and education partners.">
+  <meta property="og:title" content="Project List | UKEC">
+  <meta property="og:description" content="Browse UKEC programme brochures and partner university project information for Asia-Pacific learners and education partners.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="shortcut icon" href="../assets/cdn.prod.website-files.com/5f0da8fd320acd2df8b13eb1/65a79b4141cfc072e475d8f3_LIBT_Favicon.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="../assets/cdn.prod.website-files.com/5f0da8fd320acd2df8b13eb1/5f16038575f558ad84ac8c62_webclip_libt.png">
+  <link rel="stylesheet" href="../assets/ukec-static.css">
+  <style>
+    .ukec-project-page {
+      background: #f7f8fb;
+      color: #10233f;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      letter-spacing: 0;
+    }
+
+    .ukec-project-page * {
+      box-sizing: border-box;
+    }
+
+    .ukec-project-shell {
+      width: 92%;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .ukec-project-hero {
+      color: #fff;
+      background: linear-gradient(112deg, rgba(5, 22, 49, .96), rgba(13, 70, 98, .84) 54%, rgba(141, 16, 36, .62)), url("../assets/ukec-media/ukec-banner-uclan-intro.jpg") center / cover;
+      padding: 86px 0 94px;
+    }
+
+    .ukec-project-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(255, 255, 255, .34);
+      background: rgba(255, 255, 255, .08);
+      padding: 9px 14px;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .ukec-project-kicker span {
+      width: 8px;
+      height: 8px;
+      background: #f2c94c;
+      display: inline-block;
+    }
+
+    .ukec-project-hero h1 {
+      max-width: 760px;
+      margin: 22px 0 18px;
+      font-size: 56px;
+      line-height: 1.04;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .ukec-project-hero p {
+      max-width: 760px;
+      margin: 0;
+      color: rgba(255, 255, 255, .88);
+      font-size: 19px;
+      line-height: 1.68;
+    }
+
+    .ukec-project-summary {
+      background: #fff;
+      border-bottom: 1px solid #e4e8ef;
+    }
+
+    .ukec-project-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: #e4e8ef;
+    }
+
+    .ukec-project-stat {
+      background: #fff;
+      padding: 26px 24px;
+    }
+
+    .ukec-project-stat strong {
+      display: block;
+      color: #8d1024;
+      font-size: 26px;
+      line-height: 1.12;
+      margin-bottom: 7px;
+    }
+
+    .ukec-project-stat span {
+      color: #526071;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .ukec-project-section {
+      padding: 72px 0 80px;
+    }
+
+    .ukec-project-head {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(280px, .55fr);
+      gap: 36px;
+      align-items: end;
+      margin-bottom: 30px;
+    }
+
+    .ukec-project-label {
+      color: #8d1024;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .ukec-project-h2 {
+      font-size: 38px;
+      line-height: 1.13;
+      margin: 0;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .ukec-project-note {
+      color: #4f5d70;
+      font-size: 15px;
+      line-height: 1.62;
+      margin: 0;
+    }
+
+    .ukec-project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .ukec-project-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 282px;
+      background: #fff;
+      border: 1px solid #e4e8ef;
+      border-radius: 8px;
+      overflow: hidden;
+      text-decoration: none;
+      color: #10233f;
+      cursor: default;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+
+    .ukec-project-card:hover {
+      transform: translateY(-2px);
+      border-color: #cbd3df;
+      box-shadow: 0 18px 38px rgba(16, 35, 63, .12);
+    }
+
+    .ukec-project-card-top {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 100px;
+      padding: 22px 24px;
+      color: #fff;
+      background: linear-gradient(118deg, #0b243d, #0d4662 62%, #8d1024);
+      background-position: center;
+      background-size: cover;
+      min-height: 210px;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, .42);
+    }
+
+    .ukec-project-card-top::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(6, 24, 46, .08), rgba(6, 24, 46, .84));
+    }
+
+    .ukec-project-card-top > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .ukec-project-card:nth-child(1) .ukec-project-card-top { background-image: url("../assets/ukec-projects/wolverhampton-mba.webp"); }
+    .ukec-project-card:nth-child(2) .ukec-project-card-top { background-image: url("../assets/ukec-projects/wolverhampton-msc-human-resource-management.webp"); }
+    .ukec-project-card:nth-child(3) .ukec-project-card-top { background-image: url("../assets/ukec-projects/wolverhampton-msc-psychology.webp"); }
+    .ukec-project-card:nth-child(4) .ukec-project-card-top { background-image: url("../assets/ukec-projects/wolverhampton-ma-education.webp"); }
+    .ukec-project-card:nth-child(5) .ukec-project-card-top { background-image: url("../assets/ukec-projects/wolverhampton-msc-data-science.webp"); }
+    .ukec-project-card:nth-child(6) .ukec-project-card-top { background-image: url("../assets/ukec-projects/wolverhampton-llm-law.webp"); }
+    .ukec-project-card:nth-child(7) .ukec-project-card-top { background-image: url("../assets/ukec-projects/wolverhampton-msc-cyber-security.webp"); }
+    .ukec-project-card:nth-child(8) .ukec-project-card-top { background-image: url("../assets/ukec-projects/university-of-london-queen-mary-programmes.webp"); }
+    .ukec-project-card:nth-child(9) .ukec-project-card-top { background-image: url("../assets/ukec-projects/portsmouth-mba.webp"); }
+    .ukec-project-card:nth-child(10) .ukec-project-card-top { background-image: url("../assets/ukec-projects/portsmouth-mba-human-resource-management.webp"); }
+    .ukec-project-card:nth-child(11) .ukec-project-card-top { background-image: url("../assets/ukec-projects/portsmouth-mba-healthcare-management.webp"); }
+    .ukec-project-card:nth-child(12) .ukec-project-card-top { background-image: url("../assets/ukec-projects/portsmouth-mba-business-psychology.webp"); }
+    .ukec-project-card:nth-child(13) .ukec-project-card-top { background-image: url("../assets/ukec-projects/portsmouth-mba-educational-leadership-management.webp"); }
+    .ukec-project-card:nth-child(14) .ukec-project-card-top { background-image: url("../assets/ukec-projects/portsmouth-mba-project-management.webp"); }
+    .ukec-project-card:nth-child(15) .ukec-project-card-top { background-image: url("../assets/ukec-projects/rushford-business-school-admissions.webp"); }
+    .ukec-project-card:nth-child(16) .ukec-project-card-top { background-image: url("../assets/ukec-projects/coventry-university-admissions.webp"); }
+
+    .ukec-project-university {
+      color: #f2c94c;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .ukec-project-card h3 {
+      font-size: 20px;
+      line-height: 1.28;
+      margin: 0;
+      font-weight: 800;
+    }
+
+    .ukec-project-card-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 18px;
+      padding: 22px 24px 24px;
+    }
+
+    .ukec-project-meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .ukec-project-pill {
+      background: #edf3f5;
+      color: #0d4662;
+      border-radius: 4px;
+      padding: 7px 9px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .ukec-project-text {
+      color: #566173;
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .ukec-project-link {
+      margin-top: auto;
+      color: #8d1024;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .ukec-project-cta {
+      background: #fff;
+      padding: 0 0 78px;
+    }
+
+    .ukec-project-cta-box {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
+      align-items: center;
+      border: 1px solid #e4e8ef;
+      border-left: 6px solid #8d1024;
+      border-radius: 8px;
+      padding: 34px;
+      background: #f7f8fb;
+    }
+
+    .ukec-project-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .ukec-project-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 20px;
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .ukec-project-btn.primary {
+      background: #0d4662;
+      color: #fff;
+    }
+
+    .ukec-project-btn.secondary {
+      background: #fff;
+      color: #10233f;
+      border: 1px solid #cbd3df;
+    }
+
+    @media (max-width: 991px) {
+      .ukec-project-hero h1 {
+        font-size: 46px;
+      }
+
+      .ukec-project-summary-grid,
+      .ukec-project-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .ukec-project-head,
+      .ukec-project-cta-box {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .ukec-project-hero {
+        padding: 58px 0 68px;
+      }
+
+      .ukec-project-hero h1 {
+        font-size: 36px;
+      }
+
+      .ukec-project-hero p {
+        font-size: 16px;
+      }
+
+      .ukec-project-section {
+        padding: 54px 0;
+      }
+
+      .ukec-project-summary-grid,
+      .ukec-project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ukec-project-h2 {
+        font-size: 30px;
+      }
+
+      .ukec-project-actions {
+        display: grid;
+      }
+
+      .ukec-project-btn {
+        width: 100%;
+      }
+    }
+  </style>
+<style id="ukec-logo-fit">.uui-logo_logotype,.nav04_image,.navbar-brand img,.image-42{width:156px!important;height:106px!important;object-fit:contain!important;filter:drop-shadow(0 8px 14px rgba(0,0,0,.24))}.ukec-site-logo img{width:172px!important;height:114px!important;object-fit:contain!important;filter:drop-shadow(0 8px 14px rgba(0,0,0,.24))}.ukec-site-nav{min-height:126px!important}.ukec-footer-logo{width:220px!important;height:auto!important;filter:drop-shadow(0 10px 18px rgba(0,0,0,.28))}</style></head>
+<body>
+  <main class="ukec-project-page">
+    <section class="ukec-project-hero" aria-label="UKEC project list">
+      <div class="ukec-project-shell">
+        <div class="ukec-project-kicker"><span></span>Project List</div>
+        <h1>Programme brochures for UKEC learners and regional partners.</h1>
+        <p>Browse the current project brochures available through UKEC. Each file opens as a PDF so prospective students, counsellors, and partner organisations can review the programme details before contacting our regional team.</p>
+      </div>
+    </section>
+
+    <section class="ukec-project-summary" aria-label="Project summary">
+      <div class="ukec-project-shell ukec-project-summary-grid">
+        <div class="ukec-project-stat"><strong>16</strong><span>PDF brochures available for review.</span></div>
+        <div class="ukec-project-stat"><strong>4</strong><span>University and institution groups represented.</span></div>
+        <div class="ukec-project-stat"><strong>MBA</strong><span>Business, leadership, HR, health, and project management routes.</span></div>
+        <div class="ukec-project-stat"><strong>MSc</strong><span>Specialist postgraduate pathways across high-demand fields.</span></div>
+      </div>
+    </section>
+
+    <section class="ukec-project-section">
+      <div class="ukec-project-shell">
+        <div class="ukec-project-head">
+          <div>
+            <div class="ukec-project-label">Available brochures</div>
+            <h2 class="ukec-project-h2">Open a project brochure.</h2>
+          </div>
+          <p class="ukec-project-note">Programme information may be updated by the awarding institution. Please contact UKEC before making an application decision so our team can confirm the latest admissions route and document requirements.</p>
+        </div>
+
+        <div class="ukec-project-grid">
+          <a class="ukec-project-card" href="../pdf/%E4%BC%8D%E5%B0%94%E5%BC%97%E6%B1%89%E6%99%AE%E9%A1%BF%E5%A4%A7%E5%AD%A6MBA%E6%8B%9B%E7%94%9F%E7%AE%80%E7%AB%A0_%E5%B7%B2%E5%8E%8B%E7%BC%A9.pdf" target="_blank" rel="noopener">
+            <div class="ukec-project-card-top"><div class="ukec-project-university">University of Wolverhampton</div><h3>MBA</h3></div>
+            <div class="ukec-project-card-body"><div class="ukec-project-meta"><span class="ukec-project-pill">Business</span><span class="ukec-project-pill">MBA</span></div><p class="ukec-project-text">A postgraduate business administration pathway for learners seeking management and leadership development.</p><div class="ukec-project-link">Open PDF</div></div>
+          </a>
+
+          <a class="ukec-project-card" href="../pdf/%E4%BC%8D%E5%B0%94%E5%BC%97%E6%B1%89%E6%99%AE%E9%A1%BF%E5%A4%A7%E5%AD%A6%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E7%A1%95%E5%A3%AB%20%E6%8B%9B%E7%94%9F%E7%AE%80%E7%AB%A0_%E5%B7%B2%E5%8E%8B%E7%BC%A9.pdf" target="_blank" rel="noopener">
+            <div class="ukec-project-card-top"><div class="ukec-project-university">University of Wolverhampton</div><h3>MSc Human Resource Management</h3></div>
+            <div class="ukec-project-card-body"><div class="ukec-project-meta"><span class="ukec-project-pill">HR</span><span class="ukec-project-pill">MSc</span></div><p class="ukec-project-text">A specialist route for learners focused on people management, organisational capability, and HR practice.</p><div class="ukec-project-link">Open PDF</div></div>
+          </a>
+
+          <a class="ukec-project-card" href="../pdf/%E4%BC%8D%E5%B0%94%E5%BC%97%E6%B1%89%E6%99%AE%E9%A1%BF%E5%A4%A7%E5%AD%A6%E5%BF%83%E7%90%86%E5%AD%A6%E7%A1%95%E5%A3%AB%E6%8B%9B%E7%94%9F%E7%AE%80%E7%AB%A0_%E5%B7%B2%E5%8E%8B%E7%BC%A9.pdf" target="_blank" rel="noopener">
+            <div class="ukec-project-card-top"><div class="ukec-project-university">University of Wolverhampton</div><h3>MSc Psychology</h3></div>
+            <div class="ukec-project-card-body"><div class="ukec-project-meta"><span class="ukec-project-pill">Psychology</span><span class="ukec-project-pill">MSc</span></div><p class="ukec-project-text">A psychology-focused postgraduate brochure for learners exploring human behaviour and applied study routes.</p><div class="ukec-project-link">Open PDF</div></div>
+          </a>
+
+          <a class="ukec-project-card" href="../pdf/%E4%BC%8D%E5%B0%94%E5%BC%97%E6%B1%89%E6%99%AE%E9%A1%BF%E5%A4%A7%E5%AD%A6%E6%95%99%E8%82%B2%E5%AD%A6%E7%A1%95%E5%A3%AB%E6%8B%9B%E7%94%9F%E7%AE%80%E7%AB%A0_%E5%B7%B2%E5%8E%8B%E7%BC%A9.pdf" target="_blank" rel="noopener">
+            <div class="ukec-project-card-top"><div class="ukec-project-university">University of Wolverhampton</div><h3>MA Education</h3></div>
+            <div class="ukec-project-card-body"><div class="ukec-project-meta"><span class="ukec-project-pill">Education</span><span class="ukec-project-pill">Master's</span></div><p class="ukec-project-text">A postgraduate education route for learners working in teaching, training, management, or education services.</p><div class="ukec-project-link">Open PDF</div></div>
+          </a>
+
+          <a class="ukec-project-card" href="../pdf/%E4%BC%8D%E5%B0%94%E5%BC%97%E6%B1%89%E6%99%AE%E9%A1%BF%E5%A4%A7%E5%AD%A6%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E7%A1%95%E5%A3%AB%E6%8B%9B%E7%94%9F%E7%AE%80%E7%AB%A0_%E5%B7%B2%E5%8E%8B%E7%BC%A9.pdf" target="_blank" rel="noopener">
+            <div class="ukec-project-card-top"><div class="ukec-project-university">University of Wolverhampton</div><h3>MSc Data Science</h3></div>
+            <div class="ukec-project-card-body"><div class="ukec-project-meta"><span class="ukec-project-pill">Data</span><span class="ukec-project-pill">MSc</span></div><p class="ukec-project-text">A data science pathway for learners interested in analytics, digital skills, and technology-led decision making.</p><div class="ukec-project-link">Open PDF</div></div>
+          </a>
+
+          <a class="ukec-project-card" href="../pdf/%E4%BC%8D%E5%B0%94%E5%BC%97%E6%B1%89%E6%99%AE%E9%A1%BF%E5%A4%A7%E5%AD%A6%E6%B3%95%E5%AD%A6%E7%A1%95%E5%A3%AB%E6%8B%9B%E7%94%9F%E7%AE%80%E7%AB%A0_%E5%B7%B2%E5%8E%8B%E7%BC%A9.pdf" target="_blank" rel="noopener">
+            <div class="ukec-project-card-top"><div class="ukec-project-university">University of Wolverhampton</div><h3>LLM Law</h3></div>
+            <div class="ukec-project-card-body"><div class="ukec-project-meta"><span class="ukec-project-pill">Law</span><span class="ukec-project-pill">LLM</span></div><p class="ukec-project-text">A law-focused postgraduate project brochure for learners developing legal knowledge and international perspectives.</p><div class="ukec-project-link">Open PDF</div></div>
+          </a>
+
+          <a class="ukec-project-card" href="../pdf/%E4%BC%8D%E5%B0%94%E5%BC%97%E6%B1%89%E6%99%AE%E9%A1%BF%E5%A4%A7%E5%AD%A6%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%A1%95%E5%A3%AB%E6%8B%9B%E7%94%9F%E7%AE%80%E7%AB%A0_%E5%B7%B2%E5%8E%8B%E7%BC%A9.pdf" target="_blank" rel="noopener">
+            <div class="ukec-project-card-top"><div class="ukec-project-university">University of Wolverhampton</div><h3>MSc Cyber Security</h3></div>
+            <div class="ukec-project-card-body"><div class="ukec-project-meta"><span class="ukec-project-pill">Cyber</span><span class="ukec-project-pill">MSc</span></div><p class="ukec-project-text">A cyber security pathway for learners focused on digital risk, secure systems, and information protection.</p><div class="ukec-project-link">Open PDF</div></div>
+          </a>
+
+          <a class="ukec-project-card" href="../pdf/%E4%BC%A6%E6%95%A6%E5%A4%A7%E5%AD%A6%28%E7%8E%9B%E4%B8%BD%E5%A5%B3%E7%8E%8B%E5%AD%A6%E6%9C%AF%E6%8C%87%E5%AF%BC%29%E7%BB%BC%E5%90%88%E6%8B%9B%E7%94%9F%E7%AE%80%E7%AB%A0_%E5%B7%B2%E5%8E%8B%E7%BC%A9.pdf" target="_blank" rel="noopener">
+            <div class="ukec-project-card-top"><div class="ukec-project-university">University of London</div><h3>Programme Brochure with Queen Mary Academic Direction</h3></div>
+            <div class="ukec-project-card-body"><div class="ukec-project-meta"><span class="ukec-project-pill">University of London</span><span class="ukec-project-pill">Brochure</span></div><p class="ukec-project-text">A combined admissions brochure for University of London programmes with Queen Mary academic direction.</p><div class="ukec-project-link">Open PDF</div></div>
+          </a>
+
+          <a class="ukec-project-card" href="../pdf/%E6%9C%B4%E6%AC%A1%E8%8C%85%E6%96%AF%E5%A4%A7%E5%AD%A6MBA.pdf" target="_blank" rel="noopener">
+            <div class="ukec-project-card-top"><div class="ukec-project-university">University of Portsmouth</div><h3>MBA</h3></div>
+            <div class="ukec-project-card-body"><div class="ukec-project-meta"><span class="ukec-project-pill">Business</span><span class="ukec-project-pill">MBA</span></div><p class="ukec-project-text">A business administration project route for learners seeking a flexible management qualification.</p><div class="ukec-project-link">Open PDF</div></div>
+          </a>
+
+          <a class="ukec-project-card" href="../pdf/%E6%9C%B4%E6%AC%A1%E8%8C%85%E6%96%AF%E5%A4%A7%E5%AD%A6%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86MBA_%E5%B7%B2%E5%8E%8B%E7%BC%A9.pdf" target="_blank" rel="noopener">
+            <div class="ukec-project-card-top"><div class="ukec-project-university">University of Portsmouth</div><h3>MBA Human Resource Management</h3></div>
+            <div class="ukec-project-card-body"><div class="ukec-project-meta"><span class="ukec-project-pill">HR</span><span class="ukec-project-pill">MBA</span></div><p class="ukec-project-text">A management-focused MBA route with emphasis on people, organisational performance, and HR leadership.</p><div class="ukec-project-link">Open PDF</div></div>
+          </a>
+
+          <a class="ukec-project-card" href="../pdf/%E6%9C%B4%E6%AC%A1%E8%8C%85%E6%96%AF%E5%A4%A7%E5%AD%A6%E5%81%A5%E5%BA%B7%E7%AE%A1%E7%90%86MBA_%E5%B7%B2%E5%8E%8B%E7%BC%A9.pdf" target="_blank" rel="noopener">
+            <div class="ukec-project-card-top"><div class="ukec-project-university">University of Portsmouth</div><h3>MBA Healthcare Management</h3></div>
+            <div class="ukec-project-card-body"><div class="ukec-project-meta"><span class="ukec-project-pill">Healthcare</span><span class="ukec-project-pill">MBA</span></div><p class="ukec-project-text">A healthcare management brochure for learners working across health services, administration, or leadership.</p><div class="ukec-project-link">Open PDF</div></div>
+          </a>
+
+          <a class="ukec-project-card" href="../pdf/%E6%9C%B4%E6%AC%A1%E8%8C%85%E6%96%AF%E5%A4%A7%E5%AD%A6%E5%95%86%E4%B8%9A%E5%BF%83%E7%90%86%E5%AD%A6MBA_%E5%B7%B2%E5%8E%8B%E7%BC%A9.pdf" target="_blank" rel="noopener">
+            <div class="ukec-project-card-top"><div class="ukec-project-university">University of Portsmouth</div><h3>MBA Business Psychology</h3></div>
+            <div class="ukec-project-card-body"><div class="ukec-project-meta"><span class="ukec-project-pill">Psychology</span><span class="ukec-project-pill">MBA</span></div><p class="ukec-project-text">A business psychology route connecting management practice with behavioural and organisational insight.</p><div class="ukec-project-link">Open PDF</div></div>
+          </a>
+
+          <a class="ukec-project-card" href="../pdf/%E6%9C%B4%E6%AC%A1%E8%8C%85%E6%96%AF%E5%A4%A7%E5%AD%A6%E6%95%99%E8%82%B2%E9%A2%86%E5%AF%BC%E4%B8%8E%E7%AE%A1%E7%90%86MBA_%E5%B7%B2%E5%8E%8B%E7%BC%A9.pdf" target="_blank" rel="noopener">
+            <div class="ukec-project-card-top"><div class="ukec-project-university">University of Portsmouth</div><h3>MBA Educational Leadership and Management</h3></div>
+            <div class="ukec-project-card-body"><div class="ukec-project-meta"><span class="ukec-project-pill">Education</span><span class="ukec-project-pill">MBA</span></div><p class="ukec-project-text">A leadership route for education professionals and managers developing strategic education practice.</p><div class="ukec-project-link">Open PDF</div></div>
+          </a>
+
+          <a class="ukec-project-card" href="../pdf/%E6%9C%B4%E6%AC%A1%E8%8C%85%E6%96%AF%E5%A4%A7%E5%AD%A6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86MBA_%E5%B7%B2%E5%8E%8B%E7%BC%A9.pdf" target="_blank" rel="noopener">
+            <div class="ukec-project-card-top"><div class="ukec-project-university">University of Portsmouth</div><h3>MBA Project Management</h3></div>
+            <div class="ukec-project-card-body"><div class="ukec-project-meta"><span class="ukec-project-pill">Projects</span><span class="ukec-project-pill">MBA</span></div><p class="ukec-project-text">A project management route for learners seeking stronger delivery, planning, and organisational leadership skills.</p><div class="ukec-project-link">Open PDF</div></div>
+          </a>
+
+          <a class="ukec-project-card" href="../pdf/%E7%91%9E%E5%A3%AB%E6%8B%89%E4%BB%80%E7%A6%8F%E5%BE%B7%E5%95%86%E5%AD%A6%E9%99%A2%E6%8B%9B%E7%94%9F%E7%AE%80%E7%AB%A0_%E5%B7%B2%E5%8E%8B%E7%BC%A9.pdf" target="_blank" rel="noopener">
+            <div class="ukec-project-card-top"><div class="ukec-project-university">Rushford Business School</div><h3>Admissions Brochure</h3></div>
+            <div class="ukec-project-card-body"><div class="ukec-project-meta"><span class="ukec-project-pill">Business School</span><span class="ukec-project-pill">Brochure</span></div><p class="ukec-project-text">An admissions brochure for learners reviewing Rushford Business School study opportunities.</p><div class="ukec-project-link">Open PDF</div></div>
+          </a>
+
+          <a class="ukec-project-card" href="../pdf/%E8%8B%B1%E5%9B%BD%E8%80%83%E6%96%87%E5%9E%82%E5%A4%A7%E5%AD%A6%E6%8B%9B%E7%94%9F%E7%AE%80%E7%AB%A0_%E5%B7%B2%E5%8E%8B%E7%BC%A9.pdf" target="_blank" rel="noopener">
+            <div class="ukec-project-card-top"><div class="ukec-project-university">Coventry University</div><h3>Admissions Brochure</h3></div>
+            <div class="ukec-project-card-body"><div class="ukec-project-meta"><span class="ukec-project-pill">Coventry</span><span class="ukec-project-pill">Brochure</span></div><p class="ukec-project-text">A Coventry University admissions brochure for prospective learners and regional counsellors.</p><div class="ukec-project-link">Open PDF</div></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ukec-project-cta">
+      <div class="ukec-project-shell">
+        <div class="ukec-project-cta-box">
+          <div>
+            <div class="ukec-project-label">Need guidance?</div>
+            <h2 class="ukec-project-h2">Speak with UKEC before choosing a project.</h2>
+            <p class="ukec-project-note">Send your study background, target programme, and preferred intake plan. UKEC can help confirm the relevant brochure, admissions route, and next steps.</p>
+          </div>
+          <div class="ukec-project-actions">
+            <a class="ukec-project-btn primary" href="mailto:virgina@globalukedu.com">Email UKEC</a>
+            <a class="ukec-project-btn secondary" href="../contact-us/index.html">Contact Page</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ukec-site-footer"></footer>
+  <script>
+    document.querySelectorAll(".ukec-project-card").forEach(function (card) {
+      card.removeAttribute("href");
+      card.removeAttribute("target");
+      card.removeAttribute("rel");
+      card.setAttribute("aria-label", card.querySelector("h3").textContent + " project summary");
+    });
+
+    document.querySelectorAll(".ukec-project-link").forEach(function (link) {
+      link.textContent = "Contact UKEC for details";
+    });
+  </script>
+  <script src="../assets/ukec-layout.js?v=20260615"></script>
+</body>
+</html>
